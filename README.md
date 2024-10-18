@@ -1,5 +1,8 @@
-Keylogger
+Keylogger: 
 This is a simple keylogger program written in Python that records and logs keystrokes to a text file. It captures each key pressed by the user and saves the information for analysis.
+
+Disclaimer
+This program is intended for educational purposes only. Ensure that you have permission to run this keylogger on any system. Unauthorized use of keyloggers can violate privacy laws and ethical guidelines.
 
 Features
 Logs every key pressed, including special keys.
